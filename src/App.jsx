@@ -27,31 +27,31 @@ function App() {
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
-        console.log(res);
+      console.log(res);
 
-        const url = {
-            backdrop: res.images.secure_base_url + "original",
-            poster: res.images.secure_base_url + "original",
-            profile: res.images.secure_base_url + "original",
-        };
+      const url = {
+        backdrop: res.images.secure_base_url + "original",
+        poster: res.images.secure_base_url + "original",
+        profile: res.images.secure_base_url + "original",
+      };
 
-        dispatch(getApiConfiguration(url));
+      dispatch(getApiConfiguration(url));
     });
-};
+  };
 
   return (
     <BrowserRouter>
-     {/* <Header />*/}
+      <Header />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/mediaType/:id" element={<Details />}/>
-        <Route path="/search/:query" element={<SearchResult />}/>
-        <Route path="/explore/:mediaType" element={<Explore />}/>
-        <Route path="*" element={<PageNotFound />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/mediaType/:id" element={<Details />} />
+        <Route path="/search/:query" element={<SearchResult />} />
+        <Route path="/explore/:mediaType" element={<Explore />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {/*<Footer />*/}
+      <Footer />
     </BrowserRouter>
   );
-}
+};
 
-export default App
+export default App;

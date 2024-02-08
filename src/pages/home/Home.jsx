@@ -1,13 +1,13 @@
 
-import HeroBanner from "./heroBanner/HeroBAnner"
+import HeroBanner from "./heroBanner/HeroBanner"
 import "./home.scss"
 
 const Home = () => {
   return (
-    <div>
+    <div className="homePage">
       <HeroBanner />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
