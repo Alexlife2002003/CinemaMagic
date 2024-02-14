@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CinemaMagic">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -51,6 +51,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+
   );
 };
 
