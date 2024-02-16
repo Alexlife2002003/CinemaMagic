@@ -1,12 +1,19 @@
 import "./style.scss"
 
+import DetailsBanner from "./detailsBanner/DetailsBanner";
+import { useParams } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
+
+
+
 const Details = () => {
-  
-  const {data, loading} = useFetch('/movie/{movieId}')
+  const {mediaType, id}=useParams();
+  const {data,loading}=useFetch(`/${mediaType}/${id}/videos`)
 
   return (
     <div>
-      Details
+      <DetailsBanner />
+
     </div>
   );
 };
